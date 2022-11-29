@@ -27,6 +27,8 @@ class _HomeState extends State<Home> {
   ];
   var _dotPosition = 0;
 
+  List TopProducts = [{}];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
