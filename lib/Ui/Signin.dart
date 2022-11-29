@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:martui/Const/AppColors.dart';
+import 'package:martui/Ui/SignUp.dart';
 import 'package:martui/Widgets/customButton.dart';
 
 class Signin extends StatefulWidget {
@@ -14,6 +16,7 @@ class _SigninState extends State<Signin> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -191,7 +194,39 @@ class _SigninState extends State<Signin> {
                           SizedBox(
                             height: 50.h,
                           ),
-                          customButton("Login", () {}, false)
+                          customButton("Login", () {}, false),
+                          SizedBox(
+                            height: 50.h,
+                          ),
+                          Wrap(
+                            children: [
+                              Text(
+                                "Don't have an account?",
+                                style: TextStyle(
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(0xFFBBBBBB),
+                                ),
+                              ),
+                              GestureDetector(
+                                child: Text(
+                                  " Sign Up",
+                                  style: TextStyle(
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: Appcolors.deep_orange,
+                                  ),
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      CupertinoPageRoute(
+                                          builder: (context) =>
+                                              const SignUp()));
+                                },
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),
