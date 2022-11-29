@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "830013883042",
+    "project_id": "martui-80149",
+    "storage_bucket": "martui-80149.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830013883042:android:825c3947e9c94618c18dfb",
+        "android_client_info": {
+          "package_name": "com.martui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830013883042-2231atf6gnbt96111uls916t5chdcul9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.martui",
+            "certificate_hash": "87fe0c0443a002e30c61be48a952138550b4b6c8"
+          }
+        },
+        {
+          "client_id": "830013883042-jvorbggukrlobrkskg0edv9hbo620q7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCilW-gf7YkVgm4kCzsM6RTEaTgwZDP4ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830013883042-jvorbggukrlobrkskg0edv9hbo620q7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
