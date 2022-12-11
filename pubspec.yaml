@@ -70,6 +70,12 @@ flutter:
   assets:
     - Assets/photo_slideshow.jpeg
     - Assets/photo_slideshow.png
+    - Assets/top1.jpeg
+    - Assets/top2.jpeg
+    - Assets/top3.png
+    - Assets/acess1.jpeg
+    - Assets/acess2.jpeg
+    - Assets/acess3.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

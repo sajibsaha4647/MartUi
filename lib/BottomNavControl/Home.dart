@@ -25,9 +25,30 @@ class _HomeState extends State<Home> {
     "Assets/photo_slideshow.png",
     "Assets/photo_slideshow.png",
   ];
+
+  // ignore: non_constant_identifier_names
+  final List _Topproduct = [
+    {"image": "Assets/top1.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/top2.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/top1.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/top3.png", "title": "this is title", "price": 35},
+    {"image": "Assets/top2.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/top1.jpeg", "title": "this is title", "price": 35},
+  ];
+
+  final List _acceories = [
+    {"image": "Assets/acess1.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/acess2.jpeg", "title": "this is title", "price": 35},
+    {"image": "Assets/acess3.jpeg", "title": "this is title", "price": 35},
+  ];
+
+
   var _dotPosition = 0;
 
-  List TopProducts = [{}];
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +77,7 @@ class _HomeState extends State<Home> {
             actions: const []),
         body: Padding(
           padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 10.h),
-          child: Column(
+          child: ListView(
             children: [
               Container(
                 padding: EdgeInsets.only(left: 10.w),
@@ -172,7 +193,166 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 14.h,
               ),
+              SizedBox(
+                  height: 150.h,
+                  child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _Topproduct.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisSpacing: 5,
+                            crossAxisCount: 1,
+                            mainAxisSpacing: 10),
+                    itemBuilder: ((context, index) {
+                      // ignore: prefer_const_constructors
+                      return InkWell(
+                        child: Card(
+                          elevation: 1,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                  height: 80.h,
+                                  width: MediaQuery.of(context).size.width,
+                                  // color: Colors.yellow,
+                                  child: Image.asset(
+                                      fit: BoxFit.fill,
+                                      _Topproduct[index]["image"].toString())),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                child: Text(
+                                  _Topproduct[index]["title"].toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: const TextStyle(),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                child: Text(
+                                  _Topproduct[index]["price"].toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: const TextStyle(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
+                  )),
+              SizedBox(
+                height: 14.h,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: const BoxDecoration(),
+                        child: const Text(
+                          "Acceories",
+                          style: TextStyle(
+                              color: Appcolors.deep_orange,
+                              fontWeight: FontWeight.w800),
+                        ),
+                      )),
+                  // ignore: prefer_const_constructors
+                  Expanded(
+                      child: const Text(
+                    "ViewAll",
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        color: Appcolors.deep_orange,
+                        fontWeight: FontWeight.w800),
+                  ))
+                ],
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              SizedBox(
+                height: 150.h,
+                child: GridView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _acceories.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisSpacing: 5,
+                      crossAxisCount: 1,
+                      mainAxisSpacing: 10),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: (() {}),
+                      child: Card(
+                        elevation: 1,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                                height: 80.h,
+                                width: MediaQuery.of(context).size.width,
+                                // color: Colors.yellow,
+                                child: Image.asset(
+                                    fit: BoxFit.fill,
+                                    _acceories[index]["image"].toString())),
+                            Padding(
+                                padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                child: Text(
+                                    _Topproduct[index]["price"].toString(),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1))
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              GridView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                itemCount: _acceories.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisSpacing: 5,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: (() {}),
+                    child: Card(
+                      elevation: 1,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                              height: 80.h,
+                              width: MediaQuery.of(context).size.width,
+                              // color: Colors.yellow,
+                              child: Image.asset(
+                                  fit: BoxFit.fill,
+                                  _acceories[index]["image"].toString())),
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                              child: Text(
+                                  _Topproduct[index]["title"].toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1)),
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                              child: Text(
+                                  _Topproduct[index]["price"].toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1))
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
             ],
+            
           ),
         ),
       ),
